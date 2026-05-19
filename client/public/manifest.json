@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Google Places Scraper",
+  "version": "1.0.0",
+  "description": "Scrape Google Search Places results and export to CSV or PDF",
+  "permissions": ["activeTab", "scripting", "tabs"],
+  "action": {
+    "default_popup": "index.html"
+  },
+  "host_permissions": ["*://www.google.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["*://www.google.com/*"],
+      "js": ["content/scraper.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
